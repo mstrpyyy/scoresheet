@@ -9,13 +9,13 @@ This roadmap is organized by phase, not by date. Each phase ships something real
 
 - [x] Initialize Next.js 15 project with TypeScript
 - [x] Configure Tailwind CSS and shadcn/ui
-- [ ] Set up Neon Postgres and connect via Prisma  ← needs DATABASE_URL
+- [x] Set up Neon Postgres and connect via Prisma
 - [x] Set up Upstash Redis client
 - [x] Set up Pusher account and configure server + client instances
 - [x] Write Prisma schema (Player, Match, ScoreEvent, Group, Session)
-- [ ] Run initial migration  ← needs DATABASE_URL
-- [ ] Configure Vercel deployment from GitHub
-- [x] Set up environment variables across local and Vercel  ← .env.local.example created
+- [x] Run initial migration
+- [x] Configure Vercel deployment from GitHub
+- [x] Set up environment variables across local and Vercel
 - [x] Set up `designs/` folder and install Pencil.dev extension in VS Code
 
 **Done when:** `npm run dev` works locally, Vercel deploys on push, database is reachable.
