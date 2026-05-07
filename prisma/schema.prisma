@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Player {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Registered user fields (null for guests)
+  email        String? @unique
+  passwordHash String?
+  name         String?
+
+  // Guest identity — the JWT sub for anonymous players
+  guestId String? @unique
+
+  // Seeding
+  manualSeed Int? // 1–5, set by user
+  winRate    Float @default(0)
+
+  // Relations
+  matchPlayers  MatchPlayer[]
+  groupMembers  GroupMember[]
+  ownedGroups   Group[]
+  ownedSessions Session[]
+}
+
+model Group {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name      String
+  inviteCode String @unique @default(cuid())
+
+  ownerId String
+  owner   Player @relation(fields: [ownerId], references: [id])
+
+  members  GroupMember[]
+  sessions Session[]
+}
+
+model GroupMember {
+  id       String @id @default(cuid())
+  joinedAt DateTime @default(now())
+
+  groupId  String
+  group    Group  @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  playerId String
+  player   Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@unique([groupId, playerId])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name      String?
+  status    SessionStatus @default(ACTIVE)
+
+  // Optional group context
+  groupId String?
+  group   Group?  @relation(fields: [groupId], references: [id])
+
+  // The player who started the session
+  ownerId String
+  owner   Player @relation(fields: [ownerId], references: [id])
+
+  matches Match[]
+}
+
+model Match {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sport     Sport
+  status    MatchStatus @default(ACTIVE)
+
+  // Serialised MatchState JSON — kept in sync with Redis during live play
+  state     Json
+
+  // Format options serialised as JSON (bestOf, noAd, goldenPoint, etc.)
+  format    Json
+
+  sessionId String?
+  session   Session? @relation(fields: [sessionId], references: [id])
+
+  players     MatchPlayer[]
+  scoreEvents ScoreEvent[]
+}
+
+model MatchPlayer {
+  id String @id @default(cuid())
+
+  team   Int    // 0 or 1
+  name   String // display name at time of match
+
+  matchId  String
+  match    Match  @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  playerId String?
+  player   Player? @relation(fields: [playerId], references: [id])
+
+  @@unique([matchId, playerId])
+}
+
+model ScoreEvent {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  team      Int    // 0 or 1 — who scored
+  sequence  Int    // monotonically increasing within a match
+
+  matchId String
+  match   Match  @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  @@index([matchId, sequence])
+}
+
+enum Sport {
+  BADMINTON
+  TENNIS
+  PADEL
+}
+
+enum MatchStatus {
+  ACTIVE
+  COMPLETE
+  ABANDONED
+}
+
+enum SessionStatus {
+  ACTIVE
+  COMPLETE
+}

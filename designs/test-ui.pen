@@ -1,0 +1,1037 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "BmCRw",
+      "x": 0,
+      "y": 0,
+      "name": "Scoreboard Screen",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#0b0b0b",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ivXJe",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 44,
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "GEdEN",
+              "fill": "#ffffff",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "uSXNh",
+              "name": "Right Icons",
+              "gap": 5,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "ep0h5",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "signal",
+                  "iconFontFamily": "lucide",
+                  "fill": "#ffffff"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "Qcaea",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "battery-full",
+                  "iconFontFamily": "lucide",
+                  "fill": "#ffffff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "L1kA2g",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 52,
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "oFl5g",
+              "name": "Back Button",
+              "gap": 2,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "rjyGh",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "chevron-left",
+                  "iconFontFamily": "lucide",
+                  "fill": "#b9b9b9"
+                },
+                {
+                  "type": "text",
+                  "id": "aBK0d",
+                  "fill": "#b9b9b9",
+                  "content": "Matches",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KUXZW",
+              "name": "Sport Badge",
+              "fill": "#212121",
+              "cornerRadius": 99999,
+              "padding": [
+                5,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "i7s4x3",
+                  "fill": "#b9b9b9",
+                  "content": "BADMINTON",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 10,
+                  "fontWeight": "600",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "B791pT",
+              "name": "Settings Btn",
+              "cornerRadius": 4,
+              "padding": 2,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "ZfS5v",
+                  "width": 22,
+                  "height": 22,
+                  "iconFontName": "ellipsis",
+                  "iconFontFamily": "lucide",
+                  "fill": "#797979"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uGxye",
+          "name": "Match Info",
+          "width": "fill_container",
+          "height": 36,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "L3LNP",
+              "fill": "#797979",
+              "content": "GAME 1  ·  SET 1",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "normal",
+              "letterSpacing": 1.2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "y9NfE0",
+          "name": "Divider Top",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "#212121"
+        },
+        {
+          "type": "frame",
+          "id": "rZTRn",
+          "name": "Score Section",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            20
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "gWDNV",
+              "name": "Teams Row",
+              "width": "fill_container",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "J4mcqv",
+                  "name": "Left Team",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Thwge",
+                      "fill": "#ffffff",
+                      "content": "Alice",
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EYH6S",
+                      "fill": "#ffffff",
+                      "content": "21",
+                      "fontFamily": "Inter",
+                      "fontSize": 88,
+                      "fontWeight": "300",
+                      "letterSpacing": -2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "iIcMW",
+                      "name": "Left Sets",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "B09Uq",
+                          "fill": "#f36458",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "IBA7F",
+                          "fill": "#f36458",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "CUYCR",
+                          "fill": "#353535",
+                          "width": 8,
+                          "height": 8
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "FKRRD",
+                  "name": "Center Divider",
+                  "width": 1,
+                  "height": 140,
+                  "fill": "#353535"
+                },
+                {
+                  "type": "frame",
+                  "id": "AdMuI",
+                  "name": "Right Team",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DeCTZ",
+                      "fill": "#ffffff",
+                      "content": "Bob",
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sHxRf",
+                      "fill": "#b9b9b9",
+                      "content": "18",
+                      "fontFamily": "Inter",
+                      "fontSize": 88,
+                      "fontWeight": "300",
+                      "letterSpacing": -2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n6tYX",
+                      "name": "Right Sets",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "NZXlm",
+                          "fill": "#353535",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "Kb8uW",
+                          "fill": "#353535",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "LiHXb",
+                          "fill": "#353535",
+                          "width": 8,
+                          "height": 8
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BdqwV",
+              "name": "Serve Indicator",
+              "gap": 6,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "MVEMM",
+                  "fill": "#f36458",
+                  "width": 6,
+                  "height": 6
+                },
+                {
+                  "type": "text",
+                  "id": "gRmTT",
+                  "fill": "#797979",
+                  "content": "Alice is serving",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eCm7Z",
+          "name": "Controls Divider",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "#212121"
+        },
+        {
+          "type": "frame",
+          "id": "s0pYo",
+          "name": "Controls",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            20,
+            20,
+            44,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "J2QbNE",
+              "name": "Score Buttons Row",
+              "width": "fill_container",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Yuxtr",
+                  "name": "Alice Score Btn",
+                  "width": "fill_container",
+                  "height": 80,
+                  "fill": "#f36458",
+                  "cornerRadius": 10,
+                  "layout": "vertical",
+                  "gap": 3,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MZSE7",
+                      "fill": "#ffffff",
+                      "content": "POINT",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 10,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "tkiUF",
+                      "fill": "#ffffff",
+                      "content": "Alice",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "F1jP0q",
+                  "name": "Bob Score Btn",
+                  "width": "fill_container",
+                  "height": 80,
+                  "fill": "#f36458",
+                  "cornerRadius": 10,
+                  "layout": "vertical",
+                  "gap": 3,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pgnLu",
+                      "fill": "#ffffff",
+                      "content": "POINT",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 10,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "Q8ESrx",
+                      "fill": "#ffffff",
+                      "content": "Bob",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AUwrN",
+              "name": "Undo Button",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#212121",
+              "cornerRadius": 99999,
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "wjK1H",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "undo-2",
+                  "iconFontFamily": "lucide",
+                  "fill": "#b9b9b9"
+                },
+                {
+                  "type": "text",
+                  "id": "I469e",
+                  "fill": "#b9b9b9",
+                  "content": "Undo last point",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lOcBL",
+              "name": "End Match Button",
+              "width": "fill_container",
+              "height": 48,
+              "cornerRadius": 99999,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#353535"
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "G8ODE",
+                  "fill": "#797979",
+                  "content": "End Match",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "m4U35M",
+      "x": 430,
+      "y": 0,
+      "name": "Scoreboard Screen (Light)",
+      "clip": true,
+      "width": 390,
+      "height": 844,
+      "fill": "#ffffff",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "slyYB",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 44,
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Pdxmd",
+              "fill": "#0b0b0b",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "OUlCQ",
+              "name": "Right Icons",
+              "gap": 5,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "XeXY0",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "signal",
+                  "iconFontFamily": "lucide",
+                  "fill": "#0b0b0b"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "pbV1L",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "battery-full",
+                  "iconFontFamily": "lucide",
+                  "fill": "#0b0b0b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gYdcG",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 52,
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "hXrFJ",
+              "name": "Back Button",
+              "gap": 2,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "qAjRd",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "chevron-left",
+                  "iconFontFamily": "lucide",
+                  "fill": "#212121"
+                },
+                {
+                  "type": "text",
+                  "id": "HNJtP",
+                  "fill": "#212121",
+                  "content": "Matches",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "azpC3",
+              "name": "Sport Badge",
+              "fill": "#ededed",
+              "cornerRadius": 99999,
+              "padding": [
+                5,
+                10
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "z8usb3",
+                  "fill": "#212121",
+                  "content": "BADMINTON",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 10,
+                  "fontWeight": "600",
+                  "letterSpacing": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "v1BEn",
+              "name": "Settings Btn",
+              "cornerRadius": 4,
+              "padding": 2,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "KheR6",
+                  "width": 22,
+                  "height": 22,
+                  "iconFontName": "ellipsis",
+                  "iconFontFamily": "lucide",
+                  "fill": "#797979"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uaybQ",
+          "name": "Match Info",
+          "width": "fill_container",
+          "height": 36,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "CmfQJ",
+              "fill": "#797979",
+              "content": "GAME 1  ·  SET 1",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "normal",
+              "letterSpacing": 1.2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "k2KC2",
+          "name": "Divider Top",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "#e8e8e8"
+        },
+        {
+          "type": "frame",
+          "id": "RNbgA",
+          "name": "Score Section",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            32,
+            20
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "gCOWt",
+              "name": "Teams Row",
+              "width": "fill_container",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Ew8AC",
+                  "name": "Left Team",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "xWZX8",
+                      "fill": "#0b0b0b",
+                      "content": "Alice",
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UcEl5",
+                      "fill": "#0b0b0b",
+                      "content": "21",
+                      "fontFamily": "Inter",
+                      "fontSize": 88,
+                      "fontWeight": "300",
+                      "letterSpacing": -2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "seyee",
+                      "name": "Left Sets",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "ZNDU1",
+                          "fill": "#f36458",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "kTL2w",
+                          "fill": "#f36458",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "fSB5w",
+                          "fill": "#d8d8d8",
+                          "width": 8,
+                          "height": 8
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NHmkC",
+                  "name": "Center Divider",
+                  "width": 1,
+                  "height": 140,
+                  "fill": "#e0e0e0"
+                },
+                {
+                  "type": "frame",
+                  "id": "MYUFH",
+                  "name": "Right Team",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NItd7",
+                      "fill": "#0b0b0b",
+                      "content": "Bob",
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "v4joy",
+                      "fill": "#797979",
+                      "content": "18",
+                      "fontFamily": "Inter",
+                      "fontSize": 88,
+                      "fontWeight": "300",
+                      "letterSpacing": -2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pzaRk",
+                      "name": "Right Sets",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "DmqTR",
+                          "fill": "#d8d8d8",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "atjvR",
+                          "fill": "#d8d8d8",
+                          "width": 8,
+                          "height": 8
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "QYW6s",
+                          "fill": "#d8d8d8",
+                          "width": 8,
+                          "height": 8
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "K6oJb",
+              "name": "Serve Indicator",
+              "gap": 6,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "BD44R",
+                  "fill": "#f36458",
+                  "width": 6,
+                  "height": 6
+                },
+                {
+                  "type": "text",
+                  "id": "NSw1Q",
+                  "fill": "#797979",
+                  "content": "Alice is serving",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "mIGQq",
+          "name": "Controls Divider",
+          "width": "fill_container",
+          "height": 1,
+          "fill": "#e8e8e8"
+        },
+        {
+          "type": "frame",
+          "id": "x13f6",
+          "name": "Controls",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            20,
+            20,
+            44,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "RFNJu",
+              "name": "Score Buttons Row",
+              "width": "fill_container",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "W9StER",
+                  "name": "Alice Score Btn",
+                  "width": "fill_container",
+                  "height": 80,
+                  "fill": "#f36458",
+                  "cornerRadius": 10,
+                  "layout": "vertical",
+                  "gap": 3,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "INZ14",
+                      "fill": "#ffffff",
+                      "content": "POINT",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 10,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "ku0ti",
+                      "fill": "#ffffff",
+                      "content": "Alice",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "L352f6",
+                  "name": "Bob Score Btn",
+                  "width": "fill_container",
+                  "height": 80,
+                  "fill": "#f36458",
+                  "cornerRadius": 10,
+                  "layout": "vertical",
+                  "gap": 3,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "U1RRRz",
+                      "fill": "#ffffff",
+                      "content": "POINT",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 10,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "sr4pO",
+                      "fill": "#ffffff",
+                      "content": "Bob",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "M9uhj",
+              "name": "Undo Button",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#f0f0f0",
+              "cornerRadius": 99999,
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "KDv0g",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "undo-2",
+                  "iconFontFamily": "lucide",
+                  "fill": "#212121"
+                },
+                {
+                  "type": "text",
+                  "id": "DXN8Q",
+                  "fill": "#212121",
+                  "content": "Undo last point",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KR0g4",
+              "name": "End Match Button",
+              "width": "fill_container",
+              "height": 48,
+              "cornerRadius": 99999,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#d8d8d8"
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VeiMN",
+                  "fill": "#797979",
+                  "content": "End Match",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
