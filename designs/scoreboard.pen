@@ -1,0 +1,462 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "PvIZq",
+      "x": 0,
+      "y": 0,
+      "name": "Scoreboard / Dark",
+      "width": 390,
+      "height": 844,
+      "fill": "#0b0b0b",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "RbcKm",
+          "name": "header",
+          "width": "fill_container",
+          "padding": [
+            20,
+            20,
+            16,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "r1aII",
+              "name": "back",
+              "width": "fill_container",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "e9Rod",
+                  "name": "chevron",
+                  "fill": "#b9b9b9",
+                  "content": "‹",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "PrFtw",
+                  "name": "backLbl",
+                  "fill": "#b9b9b9",
+                  "content": "Matches",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WRIKQ",
+              "name": "sport-badge",
+              "fill": "#0b0b0b",
+              "cornerRadius": 9999,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#353535"
+              },
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "y8HQi2",
+                  "name": "sportTxt",
+                  "fill": "#ffffff",
+                  "content": "BADMINTON",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "db0zV",
+              "name": "copy-link",
+              "width": "fill_container",
+              "height": 32,
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "KUlby",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "copy",
+                  "iconFontFamily": "phosphor",
+                  "fill": "#b9b9b9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "X74Zt",
+          "name": "status",
+          "width": "fill_container",
+          "padding": [
+            0,
+            20,
+            8,
+            20
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "ewP5z",
+              "name": "statusTxt",
+              "fill": "#797979",
+              "content": "GAME 1",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 11,
+              "fontWeight": "500",
+              "letterSpacing": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "E7pIWQ",
+          "name": "score-area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 24,
+          "padding": [
+            0,
+            32
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "kEgQw",
+              "name": "team-0",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "V4zQp",
+                  "name": "name0",
+                  "fill": "#ffffff",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Player 1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16
+                },
+                {
+                  "type": "text",
+                  "id": "bPe2O",
+                  "name": "score0",
+                  "fill": "#f36458",
+                  "content": "21",
+                  "fontFamily": "Inter",
+                  "fontSize": 96,
+                  "letterSpacing": -3.84
+                },
+                {
+                  "type": "frame",
+                  "id": "j6hk7M",
+                  "name": "game-dots-0",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "JBF0L",
+                      "name": "dot0a",
+                      "fill": "#f36458",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "i25iT7",
+                      "name": "dot0b",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "F0F9s",
+                      "name": "dot0c",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "E6W5G",
+                  "name": "btn-row-0",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "O26xzH",
+                      "name": "minus-0",
+                      "width": 52,
+                      "height": 52,
+                      "cornerRadius": 9999,
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#353535"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z3wdU",
+                          "fill": "#ffffff",
+                          "content": "−",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pV7IC",
+                      "name": "plus-0",
+                      "width": 52,
+                      "height": 52,
+                      "fill": "#00000000",
+                      "cornerRadius": 9999,
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#353535"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Cwtsv",
+                          "fill": "#ffffff",
+                          "content": "+",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "zNM4B",
+              "name": "divider",
+              "fill": "#353535",
+              "width": 1,
+              "height": 96
+            },
+            {
+              "type": "frame",
+              "id": "Hh9L4",
+              "name": "team-1",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bhCiG",
+                  "name": "name1",
+                  "fill": "#ffffff",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Player 2",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16
+                },
+                {
+                  "type": "text",
+                  "id": "FfllJ",
+                  "name": "score1",
+                  "fill": "#ffffff",
+                  "content": "18",
+                  "fontFamily": "Inter",
+                  "fontSize": 96,
+                  "letterSpacing": -3.84
+                },
+                {
+                  "type": "frame",
+                  "id": "BvL9V",
+                  "name": "game-dots-1",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "f84fJU",
+                      "name": "dot1a",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "ZV6Ns",
+                      "name": "dot1b",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "yPOrr",
+                      "name": "dot1c",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "trRAu",
+                  "name": "btn-row-1",
+                  "width": "fill_container",
+                  "gap": 20,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "A4iw6Y",
+                      "name": "minus-1",
+                      "width": 52,
+                      "height": 52,
+                      "cornerRadius": 9999,
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#353535"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "G7jSs",
+                          "fill": "#ffffff",
+                          "content": "−",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jTEwJ",
+                      "name": "plus-1",
+                      "width": 52,
+                      "height": 52,
+                      "fill": "#00000000",
+                      "cornerRadius": 9999,
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#353535"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PofNl",
+                          "fill": "#ffffff",
+                          "content": "+",
+                          "fontFamily": "Inter",
+                          "fontSize": 22,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "aYfCx",
+          "name": "actions",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            20,
+            40,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "W4Bpb",
+              "name": "end-match",
+              "width": "fill_container",
+              "height": 52,
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#353535"
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "P4MtOO",
+                  "name": "endLbl",
+                  "fill": "#797979",
+                  "content": "End Match",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

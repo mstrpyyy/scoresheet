@@ -1,0 +1,611 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "fzFKG",
+      "x": 0,
+      "y": 0,
+      "name": "Components",
+      "width": 480,
+      "fill": "#0b0b0b",
+      "layout": "vertical",
+      "gap": 48,
+      "padding": 32,
+      "children": [
+        {
+          "type": "frame",
+          "id": "gTxQP",
+          "name": "Section / Buttons",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "h34Qpc",
+              "name": "secBtnLbl",
+              "fill": "#797979",
+              "content": "BUTTONS",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "gFEDV",
+              "name": "btnRow",
+              "width": "fill_container",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DLNgT",
+                  "name": "Button / Primary",
+                  "reusable": true,
+                  "fill": "#f36458",
+                  "cornerRadius": 9999,
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "h4FUV1",
+                      "fill": "#ffffff",
+                      "content": "Start Match",
+                      "fontFamily": "Inter",
+                      "fontSize": 16
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "OxFud",
+                  "name": "Button / Ghost",
+                  "reusable": true,
+                  "fill": "#212121",
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#212121"
+                  },
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fYNSD",
+                      "fill": "#b9b9b9",
+                      "content": "Cancel",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ma7hP",
+                  "name": "Button / Destructive",
+                  "reusable": true,
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#353535"
+                  },
+                  "padding": [
+                    12,
+                    20
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OCsks",
+                      "fill": "#797979",
+                      "content": "End Match",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wr7RA",
+          "name": "Button / Score",
+          "reusable": true,
+          "width": 416,
+          "height": 72,
+          "fill": "#f36458",
+          "cornerRadius": 12,
+          "layout": "vertical",
+          "gap": 2,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "ZRG1B",
+              "fill": "#ffffff",
+              "content": "Start Match",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tQF6J",
+          "name": "Section / Badges",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "sziHo",
+              "name": "secBadgeLbl",
+              "fill": "#797979",
+              "content": "BADGES & PILLS",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "By12z",
+              "name": "badgeRow",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RzQLH",
+                  "name": "Badge / Sport",
+                  "reusable": true,
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#353535"
+                  },
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "m6XOws",
+                      "fill": "#ffffff",
+                      "content": "BADMINTON",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Z0mWnK",
+                  "name": "Badge / Status",
+                  "reusable": true,
+                  "fill": "#212121",
+                  "cornerRadius": 9999,
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "G32dSf",
+                      "fill": "#797979",
+                      "content": "ACTIVE",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "M6YsW",
+          "name": "Section / Card",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "IyvOe",
+              "name": "secCardLbl",
+              "fill": "#797979",
+              "content": "CARD",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "bVMQF",
+              "name": "Card",
+              "reusable": true,
+              "width": "fill_container",
+              "fill": "#212121",
+              "cornerRadius": 6,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#353535"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "I550yO",
+                  "fill": "#ffffff",
+                  "content": "Card Title",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "tyw5n",
+                  "fill": "#b9b9b9",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Supporting text or metadata goes here.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qeF3v",
+          "name": "Section / Input",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "EJtjO",
+              "name": "secInputLbl",
+              "fill": "#797979",
+              "content": "INPUT",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "V33vEZ",
+              "name": "Input / Text",
+              "reusable": true,
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ERJO1",
+                  "name": "inputLabel",
+                  "fill": "#797979",
+                  "content": "Player name",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "xTVtg",
+                  "name": "inputBox",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#0b0b0b",
+                  "cornerRadius": 3,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#212121"
+                  },
+                  "padding": [
+                    8,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "w77rtc",
+                      "fill": "#b9b9b9",
+                      "content": "Enter name…",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CwDR7",
+          "name": "Section / Game Dots",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "QEz2m",
+              "name": "secDotsLbl",
+              "fill": "#797979",
+              "content": "GAME DOTS",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "kBjb2",
+              "name": "dotsRow",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jCx4C",
+                  "name": "Dots / Best-of-3",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "RMgBG",
+                      "fill": "#f36458",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "T1BpW",
+                      "fill": "#f36458",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "Pk9tG",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pWn2l",
+                  "name": "Dots / Best-of-3 (empty)",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "LoxSm",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "h14i9",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "WEQtm",
+                      "fill": "#353535",
+                      "width": 8,
+                      "height": 8
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "i0okh",
+          "name": "Section / Score Adjust",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "oEpsx",
+              "name": "secAdjLbl",
+              "fill": "#797979",
+              "content": "SCORE ADJUST BUTTONS",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "eOON9",
+              "name": "adjRow",
+              "gap": 20,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Ec2hi",
+                  "name": "Button / Adjust Minus",
+                  "reusable": true,
+                  "width": 52,
+                  "height": 52,
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#353535"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yIzWL",
+                      "name": "minusTxt",
+                      "fill": "#ffffff",
+                      "content": "−",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Jfec3",
+                  "name": "Button / Adjust Plus",
+                  "reusable": true,
+                  "width": 52,
+                  "height": 52,
+                  "cornerRadius": 9999,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#353535"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uaIkt",
+                      "name": "plusTxt",
+                      "fill": "#ffffff",
+                      "content": "+",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "G4aQE",
+          "name": "Section / Action Button",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "SSVKH",
+              "name": "secActionLbl",
+              "fill": "#797979",
+              "content": "ACTION BUTTON",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 10,
+              "fontWeight": "600",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "CJy1p",
+              "name": "Button / Action",
+              "reusable": true,
+              "width": "fill_container",
+              "height": 52,
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#353535"
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "u890T",
+                  "name": "actionTxt",
+                  "fill": "#797979",
+                  "content": "End Match",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "PG1tZ",
+      "x": 0,
+      "y": 0,
+      "name": "Section / Score Adjust",
+      "width": "fill_container(0)",
+      "height": "fit_content(13)",
+      "layout": "vertical",
+      "gap": 16
+    }
+  ]
+}

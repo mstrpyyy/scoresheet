@@ -25,51 +25,67 @@ This roadmap is organized by phase, not by date. Each phase ships something real
 ## Phase 1 — Scoreboard MVP
 *The core product. A working scoreboard anyone can use without an account.*
 
+### Design (Pencil.dev)
+- [x] Design `scoreboard.pen` — portrait-first, dark and light mode variants, one-handed tap targets
+- [x] Generate `Scoreboard` component from canvas via Claude Code
+- [x] Design `components.pen` — shared button, card, badge components
+
 ### Auth (guest)
-- [ ] Middleware that generates a guest JWT on first visit
-- [ ] Guest token stored in localStorage, attached to API requests
-- [ ] No login wall on any scoreboard feature
+- [x] Middleware that generates a guest JWT on first visit
+- [x] Guest token stored in localStorage, attached to API requests
+- [x] No login wall on any scoreboard feature
 
 ### Match creation
-- [ ] `POST /api/matches` — create a match with sport, player names, format
-- [ ] Sport selector: Badminton, Tennis, Padel
-- [ ] Player/team name input (free text, no account needed)
-- [ ] Match format options per sport:
+- [x] `POST /api/matches` — create a match with sport, player names, format
+- [x] Sport selector: Badminton, Tennis, Padel
+- [x] Player/team name input (free text, no account needed)
+- [x] Match format options per sport:
   - Badminton: best of 1 / best of 3 (21 pts, rally scoring)
   - Tennis: sets (with deuce/advantage or no-ad)
   - Padel: sets (with golden point option)
 
 ### Scoring engine
-- [ ] `ScoringEngine` interface in `lib/scoring/engine.ts`
-- [ ] Badminton engine
-- [ ] Tennis engine
-- [ ] Padel engine
-- [ ] Unit tests for each engine (edge cases: deuce, match point, set win)
+- [x] `ScoringEngine` interface in `lib/scoring/engine.ts`
+- [x] Badminton engine
+- [x] Tennis engine
+- [x] Padel engine
+- [x] Unit tests for each engine (edge cases: deuce, match point, set win)
 
 ### Live scoreboard
-- [ ] `GET /api/matches/[id]` — fetch match state (Redis → Postgres fallback)
-- [ ] `POST /api/matches/[id]/score` — score a point, trigger Pusher event
-- [ ] `POST /api/matches/[id]/undo` — undo last point
-- [ ] Pusher real-time sync on `match-{id}` channel
-- [ ] Optimistic UI on score tap (instant feedback, rollback on failure)
-- [ ] Match complete detection + winner display
+- [x] `GET /api/matches/[id]` — fetch match state (Redis → Postgres fallback)
+- [x] `POST /api/matches/[id]/score` — score a point, trigger Pusher event
+- [x] `POST /api/matches/[id]/undo` — undo last point
+- [x] Pusher real-time sync on `match-{id}` channel
+- [x] Optimistic UI on score tap (instant feedback, rollback on failure)
+- [x] Match complete detection + winner display
 
 ### Shareable link
-- [ ] `/match/[id]` page accessible without login
-- [ ] Copy link button on scoreboard
-- [ ] Read-only spectator view (no score buttons) for non-scorers
-
-### Design (Pencil.dev)
-- [ ] Design `scoreboard.pen` — portrait-first, dark and light mode variants, one-handed tap targets
-- [ ] Generate `Scoreboard` component from canvas via Claude Code
-- [ ] Design `components.pen` — shared button, card, badge components
+- [x] `/match/[id]` page accessible without login
+- [x] Copy link button on scoreboard
+- [x] Read-only spectator view (no score buttons) for non-scorers
 
 **Done when:** Two people can open the same match link on their phones and see scores update in real time.
 
 ---
 
+## Phase 1.5 — Doubles & Teams
+*Support for 2v2 matches.*
+
+- [ ] Support for 2v2 (doubles) matches in all sports
+- [ ] Update `MatchState` to track server and receiver positions
+- [ ] Update `ScoringEngine` logic for doubles (Badminton rotation, Tennis service side)
+- [ ] UI: Display all 4 player names on the scoreboard
+- [ ] UI: Visual indicator for who is currently serving
+- [ ] UI: Setup screen for assigning players to teams in doubles mode
+
+---
+
 ## Phase 2 — Accounts & History
 *Give players a reason to come back.*
+
+### Design
+- [ ] Design `profile.pen` — stats overview, match history list
+- [ ] Generate profile components via Claude Code
 
 ### Auth (registered users)
 - [ ] `POST /api/auth/register` — create account, promote guest history
@@ -90,16 +106,16 @@ This roadmap is organized by phase, not by date. Each phase ships something real
 - [ ] Per-sport breakdown
 - [ ] Stats visible on player profile
 
-### Design
-- [ ] Design `profile.pen` — stats overview, match history list
-- [ ] Generate profile components via Claude Code
-
 **Done when:** A registered player can log in and see their full match history and win rate.
 
 ---
 
 ## Phase 3 — Groups & Sessions
 *Make it social. Give regular playing groups a home.*
+
+### Design
+- [ ] Design `group.pen` — roster, leaderboard, session history
+- [ ] Design `session.pen` — active session, match list, live standings
 
 ### Groups
 - [ ] `POST /api/groups` — create a group, get an invite link
@@ -114,16 +130,15 @@ This roadmap is organized by phase, not by date. Each phase ships something real
 - [ ] All matches in a session linked to that session
 - [ ] Session summary on completion: results, standings, MVP
 
-### Design
-- [ ] Design `group.pen` — roster, leaderboard, session history
-- [ ] Design `session.pen` — active session, match list, live standings
-
 **Done when:** A group of friends can create a group, run a Tuesday night session, and see a summary at the end.
 
 ---
 
 ## Phase 4 — Matchmaking
 *Fair teams without the awkwardness.*
+
+### Design
+- [ ] Design `matchmaking.pen` — team generator UI, mode selector, result display
 
 ### Smart team generator
 - [ ] Manual seed input (1–5) per player
@@ -137,9 +152,6 @@ This roadmap is organized by phase, not by date. Each phase ships something real
 - [ ] Round-robin schedule generation from a roster
 - [ ] Bracket generation (single elimination)
 - [ ] "Who plays next" view during a session
-
-### Design
-- [ ] Design `matchmaking.pen` — team generator UI, mode selector, result display
 
 **Done when:** An organizer can input a group roster and get fair, history-aware team suggestions in one tap.
 

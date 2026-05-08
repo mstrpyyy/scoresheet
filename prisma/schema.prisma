@@ -86,6 +86,9 @@ model Match {
   sport     Sport
   status    MatchStatus @default(ACTIVE)
 
+  // JWT sub of the guest or user who created the match — used for scorer auth
+  creatorSub String?
+
   // Serialised MatchState JSON — kept in sync with Redis during live play
   state     Json
 

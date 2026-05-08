@@ -16,7 +16,7 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - Pill-shaped primary buttons (99999px radius) contrasting with subtle rounded rectangles (3-6px) for secondary actions
 - IBM Plex Mono as the technical counterweight to the editorial display face
 - Full-bleed dark sections with content contained in measured max-width containers
-- Hover states that shift to electric blue (`#0052ef`) across all interactive elements -- a consistent "activation" signal
+- Hover states are role-specific — each button type responds in a way that matches its semantic weight (brighter fill for primary, more visible outline for ghost, danger signal for destructive)
 
 ## 2. Color Palette & Roles
 
@@ -26,7 +26,7 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - **Sanity Red** (`#f36458`): The primary CTA and brand accent -- a warm coral-red that serves as the main call-to-action color. Used for "Get Started" buttons and primary conversion points.
 
 ### Accent & Interactive
-- **Electric Blue** (`#0052ef`): The universal hover/active state color across the entire system. Buttons, links, and interactive elements all shift to this blue on hover. Also used as `--color-blue-700` for focus rings and active states.
+- **Electric Blue** (`#0052ef`): Focus ring color for keyboard accessibility and selected/active component states. Not used as a universal hover color — each component type has its own contextual hover treatment (see Section 4).
 - **Light Blue** (`#55beff` / `#afe3ff`): Secondary blue variants used for accent backgrounds, badges, and dimmed blue surfaces.
 - **Neon Green** (`color(display-p3 .270588 1 0)`): A vivid, wide-gamut green used as `--color-fg-accent-green` for success states and premium feature highlights. Falls back to `#19d600` in sRGB.
 - **Accent Magenta** (`color(display-p3 .960784 0 1)`): A vivid wide-gamut magenta for specialized accent moments.
@@ -105,7 +105,7 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - Padding: 8px 16px
 - Border Radius: 99999px (full pill)
 - Border: none
-- Hover: Electric Blue (`#0052ef`) background, white text
+- Hover: Background brightens to `#f57a6e` (~10% lighter coral), text stays `#ffffff`
 - Font: 16px waldenburgNormal, weight 400
 
 **Secondary (Dark Pill)**
@@ -114,29 +114,44 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - Padding: 8px 12px
 - Border Radius: 99999px (full pill)
 - Border: none
-- Hover: Electric Blue (`#0052ef`) background, white text
+- Hover: Border appears at `#353535`, text lifts to `#ffffff`
 
-**Outlined (Light Pill)**
-- Background: White (`#ffffff`)
-- Text: Near Black (`#0b0b0b`)
-- Padding: 8px
-- Border Radius: 99999px (full pill)
-- Border: 1px solid `#0b0b0b`
-- Hover: Electric Blue (`#0052ef`) background, white text
-
-**Ghost / Subtle**
+**Outlined (Ghost Pill)**
 - Background: Dark Gray (`#212121`)
 - Text: Silver (`#b9b9b9`)
-- Padding: 0px 12px
-- Border Radius: 5px
+- Padding: 8px 12px
+- Border Radius: 99999px (full pill)
 - Border: 1px solid `#212121`
-- Hover: Electric Blue (`#0052ef`) background, white text
+- Hover: Border becomes more visible — shifts to `#353535`, text lifts to `#ffffff`
+
+**Destructive**
+- Background: transparent
+- Text: Medium Gray (`#797979`)
+- Padding: 8px 20px
+- Border Radius: 99999px (pill) or 12px (full-width action)
+- Border: 1px solid `#353535`
+- Hover: Border shifts to `#f36458`, background fills with translucent coral (`rgba(243, 100, 88, 0.08)`), text shifts to `#f36458` — signals danger without being alarming at rest
+
+**Score / Full-Width CTA**
+- Background: Sanity Red (`#f36458`)
+- Text: White (`#ffffff`)
+- Border Radius: 12px
+- Height: 52–72px (fills available width)
+- Hover: Background brightens to `#f57a6e` — same treatment as Primary CTA
+
+**Adjust (± circular)**
+- Background: transparent
+- Border: 1px solid `#353535`
+- Border Radius: 99999px (full circle)
+- Size: 52×52px
+- Hover: Border brightens to `#b9b9b9`, background fills with `#212121` (card surface) — communicates "pressable" without color change
 
 **Uppercase Label Button**
 - Font: 11px waldenburgNormal, weight 600, uppercase
 - Background: transparent or `#212121`
 - Text: Silver (`#b9b9b9`)
 - Letter-spacing: normal
+- Hover: Text lifts to `#ffffff`
 - Used for tab-like navigation and filter controls
 
 ### Cards
@@ -267,7 +282,7 @@ Border-based containment (1px solid `#212121` or `#353535`) serves as the primar
 
 ### Do
 - Use the achromatic gray scale as the foundation -- maintain pure neutral discipline with no warm/cool tinting
-- Apply Electric Blue (`#0052ef`) consistently as the universal hover/active state across all interactive elements
+- Use role-specific hover treatments: brighter fill for primary, more visible border for ghost/outline, danger signal (coral border + tint) for destructive, border brighten + surface fill for adjust buttons
 - Use extreme negative letter-spacing (-2px to -4.48px) on display headings 48px and above
 - Keep primary CTAs as full-pill shapes (99999px radius) with the coral-red (`#f36458`)
 - Use IBM Plex Mono uppercase for technical labels, tags, and system metadata
@@ -279,7 +294,7 @@ Border-based containment (1px solid `#212121` or `#353535`) serves as the primar
 - Don't introduce warm or cool color tints to the neutral scale -- Sanity's grays are pure achromatic
 - Don't use drop shadows for elevation -- dark interfaces demand colorimetric depth
 - Don't apply border-radius between 13px and 99998px -- the system jumps from 12px (large card) directly to pill (99999px)
-- Don't mix the coral-red CTA with the electric blue interactive color in the same element
+- Don't use a single universal hover color — hover states should reflect the semantic role of the element (primary, ghost, destructive, adjust)
 - Don't use heavy font weights (700+) -- the system maxes out at 600 and only for 11px uppercase labels
 - Don't place light text on light surfaces or dark text on dark surfaces without checking the gray-on-gray contrast ratio
 - Don't use traditional offset box-shadows -- ring shadows (0 0 0 Npx) or border-based containment only
@@ -327,7 +342,9 @@ Text Primary:    #ffffff (white on dark)
 Text Secondary:  #b9b9b9 (silver on dark)
 Text Tertiary:   #797979 (medium gray)
 CTA:             #f36458 (coral-red)
-Interactive:     #0052ef (electric blue, all hovers)
+Focus Ring:      #0052ef (electric blue, keyboard focus only)
+Hover Primary:   #f57a6e (brighter coral, +10% lightness)
+Hover Destruct:  #f36458 border + rgba(243,100,88,0.08) bg + #f36458 text
 Success:         #19d600 (green, sRGB fallback)
 Error:           #dd0000 (pure red)
 Light Surface:   #ededed / #ffffff (inverted sections)
@@ -336,7 +353,7 @@ Light Surface:   #ededed / #ffffff (inverted sections)
 ### Example Prompts
 
 **Landing page section:**
-"Create a feature section with a near-black (#0b0b0b) background. Use a 48px heading in Inter with -1.68px letter-spacing, white text. Below it, 16px body text in #b9b9b9 with 1.50 line-height. Include a coral-red (#f36458) pill button with white text and a secondary dark (#0b0b0b) pill button with #b9b9b9 text. Both buttons hover to #0052ef blue."
+"Create a feature section with a near-black (#0b0b0b) background. Use a 48px heading in Inter with -1.68px letter-spacing, white text. Below it, 16px body text in #b9b9b9 with 1.50 line-height. Include a coral-red (#f36458) pill button (hover: brightens to #f57a6e) and a secondary ghost pill with #b9b9b9 text (hover: border shifts to #353535, text to #ffffff)."
 
 **Card grid:**
 "Build a 3-column card grid on a #0b0b0b background. Each card has a #212121 surface, 1px solid #353535 border, 6px border-radius, and 24px padding. Card titles are 24px white with -0.24px letter-spacing. Body text is 13px #b9b9b9. Add a 13px IBM Plex Mono uppercase tag in #797979 at the top of each card."
@@ -345,16 +362,16 @@ Light Surface:   #ededed / #ffffff (inverted sections)
 "Design a contact form on a #0b0b0b background. Inputs have #0b0b0b background, 1px solid #212121 border, 3px border-radius, 8px 12px padding, and #b9b9b9 placeholder text. Focus state shows a 2px blue (#0052ef) ring. Submit button is a full-width coral-red (#f36458) pill. Include a 13px #797979 helper text below each field."
 
 **Navigation bar:**
-"Create a sticky top navigation on #0b0b0b with backdrop blur. Left: brand text in 15px white. Center/right: nav links in 16px #b9b9b9 that hover to blue. Far right: a coral-red (#f36458) pill CTA button. Bottom border: 1px solid #212121."
+"Create a sticky top navigation on #0b0b0b with backdrop blur. Left: brand text in 15px white. Center/right: nav links in 16px #b9b9b9 that hover to #ffffff. Far right: a coral-red (#f36458) pill CTA button that brightens to #f57a6e on hover. Bottom border: 1px solid #212121."
 
 ### Iteration Guide
 1. **Start dark**: Begin with `#0b0b0b` background, `#ffffff` primary text, `#b9b9b9` secondary text
 2. **Add structure**: Use `#212121` surfaces and `#353535` borders for containment -- no shadows
 3. **Apply typography**: Inter (or Space Grotesk) with tight letter-spacing on headings, 1.50 line-height on body
-4. **Color punctuation**: Add `#f36458` for CTAs and `#0052ef` for all hover/interactive states
+4. **Color punctuation**: Add `#f36458` for CTAs; `#0052ef` is focus rings only
 5. **Refine spacing**: 8px base unit, 24-32px within sections, 64-120px between sections
 6. **Technical details**: Add IBM Plex Mono uppercase labels for tags and metadata
-7. **Polish**: Ensure all interactive elements hover to `#0052ef`, all buttons are pills or subtle 5px radius, borders are hairline (1px)
+7. **Polish**: Apply role-specific hovers — primary brightens to `#f57a6e`, ghost borders lift to `#353535`→`#ffffff`, destructive signals with coral border + tint, adjust buttons surface with `#212121`
 
 ---
 

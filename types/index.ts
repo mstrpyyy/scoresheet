@@ -7,14 +7,20 @@ export type SessionStatus = 'ACTIVE' | 'COMPLETE'
 export interface MatchState {
   sport: Sport
   status: MatchStatus
-  // Each element is a set. Each set is [team0Score, team1Score].
+  format: MatchFormat
+  // Badminton: points per game. Tennis/Padel: games per set.
   sets: [number, number][]
-  // Index of the current (live) set.
   currentSet: number
-  // Who won: null while in progress.
   winner: 0 | 1 | null
-  // Total points scored per team across the entire match.
   totalPoints: [number, number]
+  // Tennis/Padel: raw point count within the current game
+  gameScore?: [number, number]
+  // Tennis/Padel: deuce/advantage tracking
+  deuceState?: 'deuce' | 'advantage_0' | 'advantage_1' | null
+  // Tennis: true when the current game is a 7-point tiebreak
+  tiebreak?: boolean
+  // Padel: true when the current set is a 10-point super tiebreak
+  superTiebreak?: boolean
 }
 
 export interface MatchFormat {

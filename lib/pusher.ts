@@ -9,13 +9,13 @@ export const pusherServer = new Pusher({
   useTLS: true,
 })
 
-// Singleton for client-side usage (only instantiate in the browser)
-const globalForPusher = global as unknown as { pusherClient: PusherJS }
+// Lazy singleton — only instantiated in the browser to avoid SSR crashes
+let _pusherClient: PusherJS | null = null
 
-export const pusherClient =
-  globalForPusher.pusherClient ??
-  new PusherJS(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
+export function getPusherClient(): PusherJS {
+  if (_pusherClient) return _pusherClient
+  _pusherClient = new PusherJS(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
     cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER!,
   })
-
-if (process.env.NODE_ENV !== 'production') globalForPusher.pusherClient = pusherClient
+  return _pusherClient
+}

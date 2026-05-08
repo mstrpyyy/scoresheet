@@ -1,103 +1,177 @@
-import Image from "next/image";
+'use client'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuth } from '@/components/GuestAuthProvider'
+import { cn } from '@/lib/utils'
+import type { Sport, MatchFormat } from '@/types'
 
-export default function Home() {
+const SPORTS: { id: Sport; label: string }[] = [
+  { id: 'BADMINTON', label: 'Badminton' },
+  { id: 'TENNIS', label: 'Tennis' },
+  { id: 'PADEL', label: 'Padel' },
+]
+
+const FORMAT_OPTIONS: Record<Sport, { label: string; format: Partial<MatchFormat> }[]> = {
+  BADMINTON: [
+    { label: 'Best of 3', format: { bestOf: 3 } },
+    { label: 'Best of 1', format: { bestOf: 1 } },
+  ],
+  TENNIS: [
+    { label: 'Deuce / Advantage', format: { noAd: false } },
+    { label: 'No-Ad (sudden death)', format: { noAd: true } },
+  ],
+  PADEL: [
+    { label: 'Golden Point', format: { goldenPoint: true } },
+    { label: 'Standard Deuce', format: { goldenPoint: false } },
+  ],
+}
+
+export default function HomePage() {
+  const router = useRouter()
+  const { apiFetch } = useAuth()
+
+  const [sport, setSport] = useState<Sport>('BADMINTON')
+  const [formatIdx, setFormatIdx] = useState(0)
+  const [player0, setPlayer0] = useState('')
+  const [player1, setPlayer1] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const formatOptions = FORMAT_OPTIONS[sport]
+
+  function handleSportChange(s: Sport) {
+    setSport(s)
+    setFormatIdx(0)
+  }
+
+  async function handleCreate() {
+    if (!player0.trim() || !player1.trim()) {
+      setError('Both player names are required.')
+      return
+    }
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await apiFetch('/api/matches', {
+        method: 'POST',
+        body: JSON.stringify({
+          sport,
+          format: { sport, ...formatOptions[formatIdx].format },
+          players: [
+            { name: player0.trim(), team: 0 },
+            { name: player1.trim(), team: 1 },
+          ],
+        }),
+      })
+      if (!res.ok) {
+        const data = await res.json()
+        setError(data.error ?? 'Failed to create match.')
+        return
+      }
+      const { id } = await res.json()
+      router.push(`/match/${id}`)
+    } catch {
+      setError('Network error. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-background flex flex-col pt-15 pb-10 px-5 gap-8 mx-auto w-full max-w-md">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Header */}
+      <div className="flex flex-col gap-1.5">
+        <h1 className="text-[32px] font-normal leading-none tracking-[-0.5px] text-foreground">
+          New Match
+        </h1>
+        <p className="text-sm leading-normal text-silver">
+          Set up a scoreboard, share the link, play.
+        </p>
+      </div>
+
+      {/* Sport */}
+      <section className="flex flex-col gap-3">
+        <p className="font-mono text-[10px] font-semibold tracking-[2px] text-muted-foreground uppercase">
+          Sport
+        </p>
+        <div className="grid grid-cols-3 gap-2">
+          {SPORTS.map(s => (
+            <button
+              key={s.id}
+              onClick={() => handleSportChange(s.id)}
+              className={cn(
+                'h-11 rounded-xl text-[13px] font-medium transition-colors',
+                sport === s.id
+                  ? 'bg-primary text-primary-foreground'
+                  : 'border border-border text-muted-foreground hover:border-silver hover:text-foreground',
+              )}
+            >
+              {s.label}
+            </button>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* Players */}
+      <section className="flex flex-col gap-3">
+        <p className="font-mono text-[10px] font-semibold tracking-[2px] text-muted-foreground uppercase">
+          Players
+        </p>
+        <input
+          value={player0}
+          onChange={e => setPlayer0(e.target.value)}
+          placeholder="Player 1 name"
+          maxLength={30}
+          className="h-12 rounded-[3px] border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-border transition-colors"
+        />
+        <input
+          value={player1}
+          onChange={e => setPlayer1(e.target.value)}
+          placeholder="Player 2 name"
+          maxLength={30}
+          className="h-12 rounded-[3px] border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-border transition-colors"
+        />
+      </section>
+
+      {/* Format */}
+      <section className="flex flex-col gap-3">
+        <p className="font-mono text-[10px] font-semibold tracking-[2px] text-muted-foreground uppercase">
+          Format
+        </p>
+        {formatOptions.map((opt, i) => (
+          <button
+            key={i}
+            onClick={() => setFormatIdx(i)}
+            className={cn(
+              'flex items-center gap-3 h-12 rounded-xl px-4 text-sm text-left transition-colors',
+              formatIdx === i
+                ? 'bg-card border border-foreground text-foreground'
+                : 'border border-border text-muted-foreground hover:border-silver hover:text-foreground',
+            )}
+          >
+            <span className={cn(
+              'size-3.5 rounded-full shrink-0 transition-colors',
+              formatIdx === i ? 'bg-primary' : 'border-[1.5px] border-muted-foreground',
+            )} />
+            {opt.label}
+          </button>
+        ))}
+      </section>
+
+      <div className="flex-1" />
+
+      {error && <p className="text-sm text-destructive">{error}</p>}
+
+      {/* CTA — bg-score-btn is the explicit coral-red token */}
+      <button
+        onClick={handleCreate}
+        disabled={loading}
+        className="h-13 w-full rounded-xl bg-score-btn text-[15px] font-medium text-primary-foreground transition-colors hover:bg-score-btn-hover disabled:opacity-60"
+      >
+        {loading ? 'Creating…' : 'Start Match'}
+      </button>
+
+    </main>
+  )
 }

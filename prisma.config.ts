@@ -1,7 +1,3 @@
-import { config } from 'dotenv'
-// Load .env.local first (Next.js convention), then fall back to .env
-config({ path: '.env.local' })
-config()
 import { defineConfig } from 'prisma/config'
 
 export default defineConfig({
@@ -10,8 +6,8 @@ export default defineConfig({
     path: 'prisma/migrations',
   },
   datasource: {
-    // DATABASE_URL: pooled connection string (used at runtime via connection pooler)
-    // DIRECT_URL:   direct connection string (used by Prisma Migrate — bypasses pooler)
-    url: process.env.DIRECT_URL ?? process.env.DATABASE_URL!,
+    // DIRECT_URL is required for migrations to bypass the Neon pooler.
+    // Fallback to DATABASE_URL if DIRECT_URL is not provided (e.g. local dev).
+    url: process.env.DIRECT_URL ?? process.env.DATABASE_URL,
   },
 })

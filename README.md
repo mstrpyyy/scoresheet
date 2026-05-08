@@ -206,6 +206,7 @@ Team generation uses a weighted scoring approach:
 - [x] Core scoreboard (badminton, tennis, padel)
 - [x] Shareable live session link
 - [x] Guest anonymous identity
+- [ ] Doubles (2v2) support with serving rotation
 - [ ] Player accounts & persistent history
 - [ ] Smart matchmaking
 - [ ] Player groups
