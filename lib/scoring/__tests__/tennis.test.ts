@@ -128,7 +128,7 @@ describe('tennis — set scoring', () => {
   })
 
   it('starts tiebreak at 6-6', () => {
-    let s = reach66(eng.initialState(std))
+    const s = reach66(eng.initialState(std))
     expect(s.sets[0]).toEqual([6, 6])
     expect(s.tiebreak).toBe(true)
   })
